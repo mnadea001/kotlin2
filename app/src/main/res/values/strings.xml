@@ -3,4 +3,15 @@
     <string name="textViewTitle">Créer un compte</string>
     <string name="qrCodeGenerator">QR Code</string>
     <string name="registrationBtn">Remplir le formulaire manuellement</string>
+
+    <string name="signup_txt_firstname">Prénom</string>
+    <string name="signup_txt_lastname">Nom</string>
+    <string name="signup_txt_address">Adresse</string>
+    <string name="signup_txt_city">Ville</string>
+    <string name="signup_txt_zipcode">Code Postal</string>
+    <string name="signup_txt_email">Email</string>
+    <string name="signup_loyalty_card">Carte de fidélité</string>
+    <string name="signup_btn_signup">Créer mon compte</string>
+
+
 </resources>

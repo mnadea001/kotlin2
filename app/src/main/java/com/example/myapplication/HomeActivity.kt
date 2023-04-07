@@ -1,7 +1,9 @@
 package com.example.myapplication
 
+import android.content.Intent
 import android.os.Bundle
-import android.widget.TextView
+import android.view.View
+import android.widget.Button
 
 class HomeActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -9,7 +11,11 @@ class HomeActivity : BaseActivity() {
         setContentView(R.layout.activity_home)
 
 
-        val textViewTitle=findViewById<TextView>(R.id.textViewTitle)
+        val buttonLogin=findViewById<Button>(R.id.registrationBtn)
+        buttonLogin.setOnClickListener(View.OnClickListener {
+                val intent= Intent(application,RegisterActivity::class.java)
+                startActivity(intent)
+            })
 
 
     }
