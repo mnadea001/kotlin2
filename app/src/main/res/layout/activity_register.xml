@@ -52,7 +52,7 @@
                 android:inputType="text" />
 
             <EditText
-                android:id="@+id/editTextPhone"
+                android:id="@+id/editPostalAddress"
                 style="@style/InputRegister"
                 android:ems="10"
                 android:hint="@string/signup_txt_zipcode"
@@ -66,7 +66,7 @@
                 android:inputType="text" />
 
             <EditText
-                android:id="@+id/editTextTextPassword"
+                android:id="@+id/editTextLoyaltyCard"
                 style="@style/InputRegister"
                 android:ems="10"
                 android:hint="@string/signup_loyalty_card"
