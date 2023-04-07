@@ -2,7 +2,7 @@ package com.example.myapplication
 
 
 import android.os.Bundle
-import android.widget.EditText
+import android.widget.TextView
 
 class UserHomeActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -11,11 +11,11 @@ class UserHomeActivity : BaseActivity() {
 
         setHeaderTxt("Epsi")
 
-        val editTextFirstName = findViewById<EditText>(R.id.editTextFirstName)
-        editTextFirstName.setText((application as KotlinApplication).readSharedPref("firstName"))
-        val editTextLastName = findViewById<EditText>(R.id.editTextLastName)
-        editTextLastName.setText((application as KotlinApplication).readSharedPref("lastName"))
-        val editTextAddress = findViewById<EditText>(R.id.editTextAddress)
+        val textFirstName = findViewById<TextView>(R.id.textFirstName)
+        textFirstName.text = (application as KotlinApplication).readSharedPref("firstName")
+        val textLastName = findViewById<TextView>(R.id.textLastName)
+        textLastName.text = (application as KotlinApplication).readSharedPref("lastName")
+/*        val editTextAddress = findViewById<EditText>(R.id.editTextAddress)
         editTextAddress.setText((application as KotlinApplication).readSharedPref("address"))
         val editTextCity = findViewById<EditText>(R.id.editTextCity)
         editTextCity.setText((application as KotlinApplication).readSharedPref("city"))
@@ -24,7 +24,7 @@ class UserHomeActivity : BaseActivity() {
         val editTextTextEmailAddress = findViewById<EditText>(R.id.editTextTextEmailAddress)
         editTextTextEmailAddress.setText((application as KotlinApplication).readSharedPref("email"))
         val editTextLoyaltyCard = findViewById<EditText>(R.id.editTextLoyaltyCard)
-        editTextLoyaltyCard.setText((application as KotlinApplication).readSharedPref("loyaltyCard"))
+        editTextLoyaltyCard.setText((application as KotlinApplication).readSharedPref("loyaltyCard"))*/
 
     }
 }
