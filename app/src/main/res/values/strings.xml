@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">My Application</string>
+    <string name="textViewTitle">Créer un compte</string>
+    <string name="qrCodeGenerator">QR Code</string>
+    <string name="registrationBtn">Remplir le formulaire manuellement</string>
 </resources>
