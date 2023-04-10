@@ -14,6 +14,9 @@ import com.google.zxing.WriterException
 private const val TAG = "UserHomeActivity"
 
 class UserHomeActivity : BaseActivity() {
+    val tab1Fragment = MapFragment.newInstance("", "")
+    val tab2Fragment = ProductsFragment.newInstance("", "")
+    val tab3Fragment = ShopsFragment.newInstance("", "")
     private lateinit var e1: TextView
     private lateinit var i1: ImageView
 
@@ -33,6 +36,19 @@ class UserHomeActivity : BaseActivity() {
         val text = e1.text.toString().trim()
         val bitmap = generateQRCode(text.trim())
         i1.setImageBitmap(bitmap)
+
+        val textViewTab1 = findViewById<TextView>(R.id.textViewTab1)
+        val textViewTab2 = findViewById<TextView>(R.id.textViewTab2)
+        val textViewTab3 = findViewById<TextView>(R.id.textViewTab3)
+        textViewTab1.setOnClickListener(View.OnClickListener {
+            showTab1()
+        })
+        textViewTab2.setOnClickListener(View.OnClickListener {
+            showTab2()
+        })
+        textViewTab3.setOnClickListener(View.OnClickListener {
+            showTab3()
+        })
     }
 
     private fun generateQRCode(text: String): Bitmap {
@@ -56,4 +72,29 @@ class UserHomeActivity : BaseActivity() {
         }
         return bitmap
     }
+
+    fun showTab1() {
+        val fragmentManager = supportFragmentManager
+        val fragmentTransaction = fragmentManager.beginTransaction()
+        fragmentTransaction.addToBackStack("Tab1")
+        fragmentTransaction.replace(R.id.fragmentContent, tab1Fragment)
+        fragmentTransaction.commit()
+    }
+
+    fun showTab2() {
+        val fragmentManager = supportFragmentManager
+        val fragmentTransaction = fragmentManager.beginTransaction()
+        fragmentTransaction.addToBackStack("Tab2")
+        fragmentTransaction.replace(R.id.fragmentContent, tab2Fragment)
+        fragmentTransaction.commit()
+    }
+
+    fun showTab3() {
+        val fragmentManager = supportFragmentManager
+        val fragmentTransaction = fragmentManager.beginTransaction()
+        fragmentTransaction.addToBackStack("Tab2")
+        fragmentTransaction.replace(R.id.fragmentContent, tab2Fragment)
+        fragmentTransaction.commit()
+    }
+
 }

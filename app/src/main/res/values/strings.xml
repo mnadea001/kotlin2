@@ -13,6 +13,8 @@
     <string name="signup_loyalty_card">Carte de fidélité</string>
     <string name="signup_btn_signup">Créer mon compte</string>
     <string name="textview">TextView</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 
 </resources>
