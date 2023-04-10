@@ -32,16 +32,6 @@ class UserHomeActivity : BaseActivity() {
         textFirstName.text = (application as KotlinApplication).readSharedPref("firstName")
         val textLastName = findViewById<TextView>(R.id.textLastName)
         textLastName.text = (application as KotlinApplication).readSharedPref("lastName")
-/*        val editTextAddress = findViewById<EditText>(R.id.editTextAddress)
-        editTextAddress.setText((application as KotlinApplication).readSharedPref("address"))
-        val editTextCity = findViewById<EditText>(R.id.editTextCity)
-        editTextCity.setText((application as KotlinApplication).readSharedPref("city"))
-        val editPostalAddress = findViewById<EditText>(R.id.editPostalAddress)
-        editPostalAddress.setText((application as KotlinApplication).readSharedPref("postalAddress"))
-        val editTextTextEmailAddress = findViewById<EditText>(R.id.editTextTextEmailAddress)
-        editTextTextEmailAddress.setText((application as KotlinApplication).readSharedPref("email"))
-        val editTextLoyaltyCard = findViewById<EditText>(R.id.editTextLoyaltyCard)
-        editTextLoyaltyCard.setText((application as KotlinApplication).readSharedPref("loyaltyCard"))*/
 
         b1 = findViewById(R.id.b1) as MaterialButton
         e1 = findViewById(R.id.e1) as TextInputEditText
@@ -68,7 +58,7 @@ class UserHomeActivity : BaseActivity() {
         val codeWriter = MultiFormatWriter()
         try {
             val bitMatrix =
-                codeWriter.encode(text, BarcodeFormat.QR_CODE, width, height)
+                codeWriter.encode(text, BarcodeFormat.CODE_128, width, height)
             for (x in 0 until width) {
                 for (y in 0 until height) {
                     val color = if (bitMatrix[x, y]) Color.BLACK else Color.WHITE
