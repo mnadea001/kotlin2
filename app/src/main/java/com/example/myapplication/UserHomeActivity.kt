@@ -18,8 +18,8 @@ private const val TAG = "UserHomeActivity"
 
 class UserHomeActivity : BaseActivity() {
     val text = "null"
-    private lateinit var b1: MaterialButton
-    private lateinit var e1: TextInputEditText
+    //private lateinit var b1: MaterialButton
+    private lateinit var e1: TextView
     private lateinit var i1: ImageView
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -28,27 +28,27 @@ class UserHomeActivity : BaseActivity() {
 
         setHeaderTxt("Epsi")
 
-        val textFirstName = findViewById<TextView>(R.id.textFirstName)
-        textFirstName.text = (application as KotlinApplication).readSharedPref("firstName")
+        e1 = findViewById(R.id.textFirstName) as TextView
+        e1.text = (application as KotlinApplication).readSharedPref("firstName")
         val textLastName = findViewById<TextView>(R.id.textLastName)
         textLastName.text = (application as KotlinApplication).readSharedPref("lastName")
 
-        b1 = findViewById(R.id.b1) as MaterialButton
-        e1 = findViewById(R.id.e1) as TextInputEditText
+       // b1 = findViewById(R.id.b1) as MaterialButton
+        //e1 = findViewById(R.id.e1) as TextInputEditText
         i1 = findViewById(R.id.i1) as ImageView
 
-        b1.setOnClickListener{
+        //b1.setOnClickListener{
             val text = e1.text.toString().trim()
-            if(text.trim().isEmpty()){
+/*            if(text.trim().isEmpty()){
 
                 Toast.makeText(this,"Empty",3000).show()
 
-            }else{
+            }else{*/
 
                 val bitmap = generateQRCode(text.trim())
                 i1.setImageBitmap(bitmap)
-            }
-        }
+         //   }
+       // }
     }
 
     private fun generateQRCode(text: String): Bitmap {
