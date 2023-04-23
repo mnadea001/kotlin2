@@ -1,6 +1,8 @@
 package com.example.myapplication
 
 
+import android.content.Context
+import android.content.SharedPreferences
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -55,12 +57,12 @@ class QrCodeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val e1 = view.findViewById<TextView>(R.id.textFirstName)
-        e1.text = (application as KotlinApplication).readSharedPref("firstName")
+        e1.text = readSharedPref("firstName")
         val textLastName = view.findViewById<TextView>(R.id.textLastName)
-        textLastName.text = (application as KotlinApplication).readSharedPref("lastName")
+        textLastName.text = readSharedPref("lastName")
 
         val textLoyaltyCard = view.findViewById<TextView>(R.id.textLoyaltyCard)
-        textLoyaltyCard.text = (application as KotlinApplication).readSharedPref("loyaltyCard")
+        textLoyaltyCard.text = readSharedPref("loyaltyCard")
 
         val i1 = view.findViewById<ImageView>(R.id.i1)
         val text = e1.text.toString().trim()
@@ -68,7 +70,11 @@ class QrCodeFragment : Fragment() {
         i1.setImageBitmap(bitmap)
     }
 
-
+    fun readSharedPref(key:String):String{
+        //val sharedPreferences : SharedPreferences = activity!!.getPreferences(Context.MODE_PRIVATE)
+        val sharedPreferences: SharedPreferences = this.getSharedPreferences("account", Context.MODE_PRIVATE)
+        return sharedPreferences.getString(key,"").toString()
+    }
     private fun generateQRCode(text: String): Bitmap {
         val width = 150
         val height = 150

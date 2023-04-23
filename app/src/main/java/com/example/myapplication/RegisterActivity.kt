@@ -28,7 +28,7 @@ class RegisterActivity : BaseActivity() {
             (application as KotlinApplication).writeSharedPref("postAddress",editPostalAddress.text.toString())
             (application as KotlinApplication).writeSharedPref("email",editTextTextEmailAddress.text.toString())
             (application as KotlinApplication).writeSharedPref("loyaltyCard",editTextLoyaltyCard.text.toString())
-            val intent= Intent(application,QrCodeFragment::class.java)
+            val intent= Intent(application,TabbarActivity::class.java)
             startActivity(intent)
 
         })

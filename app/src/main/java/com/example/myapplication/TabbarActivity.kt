@@ -32,7 +32,7 @@ class TabbarActivity : BaseActivity() {
         val fragmentManager = supportFragmentManager
         val fragmentTransaction = fragmentManager.beginTransaction()
         fragmentTransaction.addToBackStack("QrCode")
-        fragmentTransaction.replace(R.id.content, tab1Fragment)
+        fragmentTransaction.replace(R.id.fragmentContent, tab1Fragment)
         fragmentTransaction.commit()
     }
 
@@ -40,7 +40,7 @@ class TabbarActivity : BaseActivity() {
         val fragmentManager = supportFragmentManager
         val fragmentTransaction = fragmentManager.beginTransaction()
         fragmentTransaction.addToBackStack("Products")
-        fragmentTransaction.replace(R.id.content, tab2Fragment)
+        fragmentTransaction.replace(R.id.fragmentContent, tab2Fragment)
         fragmentTransaction.commit()
     }
 
@@ -48,7 +48,7 @@ class TabbarActivity : BaseActivity() {
         val fragmentManager = supportFragmentManager
         val fragmentTransaction = fragmentManager.beginTransaction()
         fragmentTransaction.addToBackStack("Shops")
-        fragmentTransaction.replace(R.id.content, tab3Fragment)
+        fragmentTransaction.replace(R.id.fragmentContent, tab3Fragment)
         fragmentTransaction.commit()
     }
 }
