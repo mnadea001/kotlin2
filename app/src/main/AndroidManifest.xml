@@ -15,13 +15,19 @@
         android:theme="@style/Theme.MyApplication"
         tools:targetApi="31">
         <activity
+            android:name=".ShopsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".OffresActivity"
+            android:exported="false" />
+        <activity
             android:name=".KotlinApplication"
             android:exported="false" />
         <activity
             android:name=".RegisterActivity"
             android:exported="false" />
         <activity
-            android:name=".UserHomeActivity"
+            android:name=".QrCodeActivity"
             android:exported="false" />
         <activity
             android:name=".BaseActivity"

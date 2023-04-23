@@ -11,16 +11,22 @@ import com.google.zxing.BarcodeFormat
 import com.google.zxing.MultiFormatWriter
 import com.google.zxing.WriterException
 
-private const val TAG = "UserHomeActivity"
+private const val TAG = "QrCodeActivity"
 
-class UserHomeActivity : BaseActivity() {
+class QrCodeActivity : BaseActivity() {
     private lateinit var e1: TextView
     private lateinit var i1: ImageView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_user_home)
+        setContentView(R.layout.activity_qrcode)
         setHeaderTxt("Epsi")
+        getTabbar()
+
+        val textViewTab1 = findViewById<TextView>(R.id.textViewTab1)
+        val textViewTab2 = findViewById<TextView>(R.id.textViewTab2)
+        val textViewTab3 = findViewById<TextView>(R.id.textViewTab3)
+
         e1 = findViewById<TextView>(R.id.textFirstName)
         e1.text = (application as KotlinApplication).readSharedPref("firstName")
         val textLastName = findViewById<TextView>(R.id.textLastName)
@@ -33,6 +39,7 @@ class UserHomeActivity : BaseActivity() {
         val text = e1.text.toString().trim()
         val bitmap = generateQRCode(text.trim())
         i1.setImageBitmap(bitmap)
+
     }
 
     private fun generateQRCode(text: String): Bitmap {
@@ -56,4 +63,7 @@ class UserHomeActivity : BaseActivity() {
         }
         return bitmap
     }
+
+
+
 }
