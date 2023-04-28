@@ -7,6 +7,14 @@ import android.widget.Button
 
 class HomeActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
+
+        //(application as KotlinApplication).clearSharedPref()
+
+        if( (application as KotlinApplication).readSharedPref("firstName") != "" ){
+            val intent = Intent(this, UserHomeActivity::class.java)
+            startActivity(intent)
+        }
+
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
 

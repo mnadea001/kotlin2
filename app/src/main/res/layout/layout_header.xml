@@ -1,15 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="horizontal"
+    android:id="@+id/header_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
+    <ImageButton
+        android:id="@+id/imageViewBack"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_weight="0.1"
+        app:srcCompat="@drawable/icon_back"
+        android:background="@color/blue_200"
+        android:visibility="gone"
+    />
+
     <TextView
         android:id="@+id/textViewTitle"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="60dp"
-        android:background="@color/teal_200"
+
+        android:layout_weight="0.8"
+        android:background="@color/blue_200"
         android:gravity="center"
         android:textStyle="bold"
-        android:textSize="28sp" />
+        android:textSize="20sp"
+        android:textColor="#FFFFFFFF"
+        />
+
+    <ImageButton
+        android:id="@+id/buttonProfil"
+
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_weight="0.1"
+        android:background="@color/blue_200"
+        android:gravity="center"
+        android:src="@drawable/icon_profil"
+        android:textColor="#FFFFFFFF"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        tools:src="@drawable/icon_profil"
+        android:visibility="gone"/>
+
 </LinearLayout>
