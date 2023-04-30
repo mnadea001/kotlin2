@@ -23,7 +23,13 @@ class HomeActivity : BaseActivity() {
         buttonLogin.setOnClickListener(View.OnClickListener {
                 val intent= Intent(application,RegisterActivity::class.java)
                 startActivity(intent)
-            })
+        })
+
+        val buttonQrCode=findViewById<Button>(R.id.qrCodeGenerator)
+        buttonQrCode.setOnClickListener(View.OnClickListener {
+            val intent= Intent(application,CodebarActivity::class.java)
+            startActivity(intent)
+        })
 
 
     }
