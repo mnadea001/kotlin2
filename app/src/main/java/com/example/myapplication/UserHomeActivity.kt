@@ -21,10 +21,7 @@ class UserHomeActivity : BaseActivity() {
         setContentView(R.layout.activity_user_home)
         setHeaderTxt("Epsi")
         showProfil()
-
         setFooter()
-
-
 
         val textName = findViewById<TextView>(R.id.textFirstName)
 
@@ -34,7 +31,10 @@ class UserHomeActivity : BaseActivity() {
         textName.text = "$firstName $lastName"
 
         val barcodeVue = (application as KotlinApplication).readSharedPref("loyaltyCard")
+
         val barcodeData = findViewById<ImageView>(R.id.barcodeData)
+
+
         val writer : MultiFormatWriter = MultiFormatWriter();
         try {
             val matrix : BitMatrix = writer.encode(barcodeVue, BarcodeFormat.CODABAR, 800, 400)

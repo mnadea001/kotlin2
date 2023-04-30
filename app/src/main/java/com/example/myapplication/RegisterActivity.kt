@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
+import android.widget.Toast
 import org.json.JSONObject
 
 class RegisterActivity : BaseActivity() {
@@ -23,7 +24,6 @@ class RegisterActivity : BaseActivity() {
         val editPostalAddress=findViewById<EditText>(R.id.editPostalAddress)
         val editTextTextEmailAddress=findViewById<EditText>(R.id.editTextTextEmailAddress)
         val editTextLoyaltyCard=findViewById<EditText>(R.id.editTextLoyaltyCard)
-
         val signUpButtonSignUp=findViewById<Button>(R.id.signUpButtonSignUp)
 
         if(intent.hasExtra("json")) {
@@ -46,10 +46,14 @@ class RegisterActivity : BaseActivity() {
             (application as KotlinApplication).writeSharedPref("city",editTextCity.text.toString())
             (application as KotlinApplication).writeSharedPref("postAddress",editPostalAddress.text.toString())
             (application as KotlinApplication).writeSharedPref("email",editTextTextEmailAddress.text.toString())
-            (application as KotlinApplication).writeSharedPref("loyaltyCard",editTextLoyaltyCard.text.toString())
-            val intent= Intent(application,UserHomeActivity::class.java)
-            startActivity(intent)
 
+            if (containsOnlyDigits(editTextLoyaltyCard.text.toString())) {
+                (application as KotlinApplication).writeSharedPref("loyaltyCard",editTextLoyaltyCard.text.toString())
+                val intent= Intent(application,UserHomeActivity::class.java)
+                startActivity(intent)
+            } else {
+                Toast.makeText(this, "La carte de fidélité ne doit pas contenir de lettres", Toast.LENGTH_SHORT).show()
+            }
         })
 
 
